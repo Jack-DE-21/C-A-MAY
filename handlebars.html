@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Font Awesome CDN for icons like car, brush, etc. -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">   
+
+  <meta charset="UTF-8">
+  <title>Exercise 2</title>
+
+  <!-- External CSS file (style.css) if you have extra styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Handlebars library for templating -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+
+  <!-- Internal CSS for layout and styling -->
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #050c24;
+      color: white;
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+    nav a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Card styling for aircraft display */
+    .card {
+      flex: 0 0 300px;
+      margin: 20px;
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+      transition: 0.3s;
+    }
+
+    /* Ensures image doesn't overflow */
+    .card img {
+      max-width: 1000px;
+      padding-top: 0.5%;
+    }
+
+    /* Container for text inside the card */
+    .card .text {
+      padding: 0 20px 10px;
+    }
+
+    /* Zoom-in effect on hover */
+    .card:hover {
+      transform: scale(1.1);
+    }
+
+    /* Container that holds all cards */
+    #card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* Flex layout for inner detail rows */
+    #outer {
+      display: flex;
+      flex-direction: column;
+      gap: .5em;
+    }
+
+    .inner {
+      display: flex;
+      gap: 1em;
+      justify-content: space-between;
+    }
+
+    /* Make sure icons and text align nicely */
+    .inner span {
+      flex: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Main header -->
+  <header>
+    <h1>Welcome to My Website</h1>
+    
+    <!-- Simple navbar linking to other pages -->
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="data.html">CATEGORICAL FIGHTERS</a>
+        <a href="about.html">ABOUT</a>
+        <a href="handlebars.html">HANDLEBARS</a>
+        <a href="commenst.html">COMMENTS</a> 
+    </nav>
+  </header>
+
+  <!-- Where the dynamic cards will appear -->
+  <div id="card-container"></div>
+
+  <!-- Handlebars template for rendering aircraft cards -->
+  <script id="exercise-2" type="text/x-handlebars-template">
+    {{#each this}}
+      <div class="card">
+        <img src="{{image}}" alt="{{make}} {{model}}">
+        <div class="text">
+          <h2>{{make}} {{model}}</h2>
+          <p>{{detail}}</p>
+          <div id="outer">
+            <div class="inner">
+              <span><i class="fa fa-calendar"></i> {{year}}</span>
+              <span><i class="fa fa-paint-brush"></i> {{colour}}</span>
+            </div>
+            <div class="inner">
+              <span><i class="fa fa-tachometer"></i> {{kms}} km</span>
+              <span><i class="fa fa-car"></i> {{style}}</span>
+            </div>
+          </div>
+          <p><i class="fa fa-eur"></i> {{price}}</p>
+        </div>
+      </div>
+    {{/each}}
+  </script>
+
+  <!-- JavaScript to populate the template with aircraft data -->
+  <script>
+    const aircraftArray = [
+      {
+        // First aircraft - F-22
+        model: 'Model : F-22 RAPTOR',
+        detail: 'Role : ANTIRADAR AIR DOMINANCE | AIR-TO-AIR & AIR-TO-GROUND',
+        colour: 'Color : ANTI-RADAR GREY',
+        image: 'images/F-22-Raptor-Stealth-Fighter.jpg',
+        kms: 'Flight : 2400',
+        year: 'Year : 1990',
+        price: 'Price : $70m',
+        style: 'Category : AIR-DOMINANCE',
+      },
+      {
+        // Second aircraft - Eurofighter
+        make: 'Model : EUROFIGHTER',  //
+        model: 'TYPHOON',
+        detail: 'Role : MULTI-ROLE | HIGH SPEED | AGILITY MISSION FLEXIBLE',
+        colour: 'Color : STORM GREY',
+        image: 'images/euro typhoon.jpeg',
+        kms: 'Flight time : 1500',
+        year: 'Year : 2003',
+        price: 'Price : $90m',
+        style: 'Category : MULTI-ROLE',
+      }
+    ];
+
+    // Compile the Handlebars template
+    const source = document.getElementById("exercise-2").innerHTML;
+    const template = Handlebars.compile(source);
+
+    // Apply the template to the data
+    const compiledHtml = template(aircraftArray);
+
+    // Insert the rendered HTML into the DOM
+    document.getElementById("card-container").innerHTML = compiledHtml;
+  </script>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Bolu Onafeso. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

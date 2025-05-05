@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | My Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/before-effect-slider.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Website</h1>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="data.html">CATEGORICAL FIGHTERS</a>
+            <a href="about.html">ABOUT</a>
+            <a href="handlebars.html">HANDLEBARS</a>
+            <a href="commenst.html">COMENTS</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Introduction</h2>
+        <p>Fighter jets, their roles, and use cases.</p>
+        
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Fighter Jet Type</th>
+                    <th>Use Case</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Air Superiority Fighters</strong></td>
+                    <td>Designed for dominance in air-to-air combat. Used to establish control over enemy airspace (e.g., F-22 Raptor, Su-35).</td>
+                </tr>
+                <tr>
+                    <td><strong>Multirole Fighters</strong></td>
+                    <td>Capable of air-to-air and air-to-ground missions, providing flexibility in modern warfare (e.g., F-35 Lightning II, Dassault Rafale).</td>
+                </tr>
+                <tr>
+                    <td><strong>Stealth Fighters</strong></td>
+                    <td>Equipped with radar-evading technology, ideal for penetrating enemy defenses undetected (e.g., F-117 Nighthawk, J-20).</td>
+                </tr>
+                <tr>
+                    <td><strong>Interceptor Fighters</strong></td>
+                    <td>Specialized in fast response to intercept and destroy incoming enemy bombers or aircraft (e.g., MiG-31, F-106 Delta Dart).</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <section id="gallery">
+            <a href="images/F-22-Raptor-top-scaled.jpg">
+                <img alt="Photo 1" src="images/thumbnail/F-22-Raptor-top-scaled.jpg">
+            </a>
+            <a href="images/f335.jpg">
+                <img alt="Photo 2" src="images/thumbnail/030922-F-0000J-888.avif">
+            </a>
+            <a href="images/photo3.jpg">
+                <img alt="Photo 3" src="images/thumbnail/f35.avif">
+            </a>
+            <a href="images/download.jpeg">
+                <img alt="Photo 3" src="images/thumbnail/su -.jpg">
+            </a>
+            <a href="images/photo3.jpg">
+                <img alt="Photo 3" src="images/thumbnail/Eurofighter-Typhoon.jpg">
+            </a>
+         </section> 
+       
+      <!--  Target div for before-effect-slider -->
+      <div id="images"></div>
+    </section>
+  </div>
+  
+                                                                                                                                                                     BEfore and after js -->
+  <script src="js/before-effect-slider.js"></script>
+
+   <!--  Plugin  -->
+   <script>
+    beforeEffectslider({
+      Selector: "#images",
+      AfterImage: "images/PAS-L-2025-ROSE-PARADE-0102-DM-06_1b6239-1.webp", //   image
+      BeforeImage: "images/b2.jpg",   //   image
+      DragFrom: 50,                     //  Starts at 40% before and  image this is for the before and after image indicating whether to start display at a certain % higher would see more before image lower more after image
+      ButtonsText: {                   //  Custom button labels
+        After: 'Aftger',
+        Before: 'Before'
+        
+      },
+    });
+  </script>
+      
+    </main>
+ 
+    <script src="script.js"></script>
+
+    <footer>
+       
+        <p>© 2025 Bolu Onafeso. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

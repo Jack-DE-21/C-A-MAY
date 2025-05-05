@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <meta charset="UTF-8">
+    
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+   
+    <title>CATEGORICAL FIGHTERS</title>
+   
+ 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>CATEGORICAL FIGHTERS</h1>
+        <nav>
+            <!-- Navigation links -->
+            <a href="index.html">HOME</a>
+            <a href="data.html">CATEGORICAL FIGHTERS</a>
+            <a href="about.html">ABOUT</a>
+            <a href="handlebars.html">HANDLEBARS</a>
+            <a href="commenst.html">COMMENTS</a>
+        </nav>
+    </header>
+
+    <main>
+  
+        <h2>Jets</h2>
+
+        <!-- Search input for filtering by name -->
+        <input type="text" id="searchInput" placeholder="Search by name"> 
+        <button onclick="searchData()">Search</button> <!-- Calls searchData() function when clicked -->
+
+        <!-- Table displaying fighter data -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th> <!-- Fighter name -->
+                    <th>Role</th> <!-- Fighter role (e.g., interceptor, multi-role) -->
+                    <th>Action</th> <!-- Buttons like delete/edit will likely go here -->
+                </tr>
+            </thead>
+            <tbody id="dataTable"></tbody> <!-- JS will dynamically insert rows here -->
+        </table>
+
+        <!-- Form to add a new fighter -->
+        <h3>Add New Fighter</h3>
+        <input type="text" id="nameInput" placeholder="Enter name"> <!-- Fighter name input -->
+        <input type="text" id="roleInput" placeholder="Enter role"> <!-- Fighter role input -->
+        <button onclick="addData()">Add</button> <!-- Calls addData() when clicked -->
+    </main>
+
+
+    <footer>
+        <p>© 2025 Bolu Onafeso. All rights reserved.</p>
+    </footer>
+
+    <!-- Linking to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

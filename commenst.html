@@ -1,0 +1,147 @@
+<!-- about.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> <!-- Link to the external stylesheet -->
+    <title>About Us</title>
+</head>
+<body>
+    <!-- Header Section: Contains the main title and navigation links -->
+    <header>
+        <h1>Welcome to My Website</h1> <!-- The title of the page -->
+        
+        <!-- Navigation bar with links to other pages -->
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="data.html">CATEGORICAL FIGHTERS</a>
+            <a href="about.html">ABOUT</a>
+            <a href="handlebars.html">HANDLEBARS</a>
+            <a href="commenst.html">COMMENTS</a>
+        </nav>
+    </header>
+
+    <!-- Main Section: Heading for the "About Us" content -->
+    <h2>about us</h2>
+
+    <!-- Comment Form Section: Form where users can submit comments -->
+    <h3>Don't leave a comment :)  </h3>
+    <form id="commentForm">
+        <textarea id="commentText" placeholder="AIR SUPERRRRRRR..."></textarea>
+        <button type="submit">Submit Comment</button> <!-- Submit button for comment -->
+    </form>
+
+    <!-- Display section for the submitted comments -->
+    <h2>COMMENTS : </h2>
+    <div id="comments-container"></div> <!-- This will hold the rendered comments -->
+
+    <style>
+        /* Styling for the page */
+        body {
+          font-family: 'Segoe UI', sans-serif;
+          background-color: #f9f9f9;
+          color: #333;
+        }
+      
+        h1 {
+          color: #ffffff;
+        }
+      
+        h2 {
+          padding-top: 1%;
+          text-transform: capitalize;
+        }
+
+        /* Styling for the comment form */
+        form {
+          margin-top: 20px;
+          margin-bottom: 30px;
+        }
+
+        /* Styling for the textarea where is input coment*/
+        textarea {
+          width: 100%;
+          height: 100px;
+          padding: 12px;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+          font-size: 1rem;
+          resize: vertical;
+        }
+
+        /* Button styling (submit comment) */
+        button {
+          margin-top: 10px;
+          padding: 10px 18px;
+          background-color: #ff0000;
+          color: #fff;
+          border: none;
+          border-radius: 6px;
+          font-size: 1rem;
+          cursor: pointer;
+          transition: background-color 0.2s ease-in-out;
+        }
+
+        /* Hover effect for the button */
+        button:hover {
+          background-color: #000000;
+        }
+
+        /* Styling for individual comments , comments which are displayed after input*/
+        .comment {
+          background-color: #e9e5e5;
+          padding: 5px 30px;
+          margin-bottom: 15px;
+          border-radius: 8px;
+          border-left: 4px solid #2143db;
+          border-right: 4px solid rgba(216, 19, 206, 0.733);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Bold the name in comments */
+        .comment p:first-child {
+          font-weight: bold;
+          margin-bottom: 6px;
+        }
+
+        /* Container for the comments */
+        #comments-container {
+          max-width: 700px;
+        }
+
+        
+
+    </style>
+
+    <!-- Handlebars Template for Rendering Comments -->
+    <script id="comments-template" type="text/x-handlebars-template">
+        <!-- This template loops through the 'comments' array and displays each comment -->
+        {{#each comments}}
+            <div class="comment">
+                <p><strong>{{this.name}}</strong>:</p> <!-- Display commenter’s name -->
+                <p>{{this.text}}</p> <!-- Display the comment text -->
+            </div>
+        {{/each}}
+    </script>
+
+    <!-- Image Section: Clickable image that links to a larger version -->
+    <section id="gd">
+      <a href="images/5cc72599c013352e2208d510.webp">
+          <img alt="Photo 1" src="images/5cc72599c013352e2208d510.webp">
+          <script src="script.js"></script>
+      </a>
+    </section>
+
+    <!-- Linking external Handlebars.js for dynamic rendering -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+
+    <!-- Linking the JavaScript file for dynamic functionality -->
+    <script src="app.js"></script>
+</body>
+
+<!-- Footer: Copyright text -->
+<footer>
+  <p>© 2025 Bolu Onafeso. All rights reserved.</p>
+</footer>
+</html>
